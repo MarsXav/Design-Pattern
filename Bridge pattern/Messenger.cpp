@@ -35,6 +35,7 @@ public:
 class MobileMessenger : public Messenger{
 //    MessengerImp* messengerImp; // declare as pointer to realise polymorphism
 public:
+    MobileMessenger(MessengerImp* messengerImp) : Messenger(messengerImp){}
     virtual void Login(string username, string password){
         messengerImp->Connect();
     }
@@ -44,7 +45,7 @@ public:
 };
 
 void MessengerImp::Process() {
-    MessengerImp* Imp = new PCMessengerImp();
+    MessengerImp* Imp = new MobileMessengerImp();
     Messenger* m = new Messenger(Imp);
     m->SendMessage("Hello");
     m->Login("abc", "abc");
