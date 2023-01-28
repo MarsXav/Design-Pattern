@@ -1,7 +1,6 @@
 #ifndef STATE_PATTER_STATE_H
 #define STATE_PATTER_STATE_H
 
-// 
 
 class NetworkStates{
 public:
@@ -91,6 +90,5 @@ public:
 		pState = pState->pNextState;
 	}
 };
-
 
 #endif
