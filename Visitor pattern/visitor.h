@@ -13,15 +13,11 @@ public:
 
 class ElementA : public Element{
 public:
-	void accept (Visitor& visitor) override {
-		visitor.visitElementA(*this);	
-	}
+	void accept (Visitor& visitor) override;
 };
 class ElementB : public Element{
 public:
-	void accept (Visitor& visitor) override {
-		visitor.visitElementB(*this);	
-	}
+	void accept (Visitor& visitor) override;
 };
 
 //expansion base class
@@ -35,22 +31,14 @@ public:
 //expansion 1
 class Visitor1 : public Visitor {
 public:
-	void visitElementA(ElementA& element) override {
-		std::cout << "Visitor1 is processing ElementA" << std::endl;
-	}
-	void visitElementB(ElementB& element) override {
-		std::cout << "Visitor1 is processing ElementB" << std::endl;
-	}
+	void visitElementA(ElementA& element) override;
+	void visitElementB(ElementB& element) override;
 };
 //expansion 2
 class Visitor2 : public Visitor {
 public:
-	void visitElementA(ElementA& element) override {
-		std::cout << "Visitor2 is processing ElementA" << std::endl;
-	}
-	void visitElementB(ElementB& element) override {
-		std::cout << "Visitor2 is processing ElementB" << std::endl;
-	}
+	void visitElementA(ElementA& element) override;
+	void visitElementB(ElementB& element) override ;
 };
 
 
